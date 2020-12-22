@@ -1,0 +1,117 @@
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "paintings current members";
+}
+.list {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  padding: 1rem;
+  overflow: auto;
+}
+.list > span {
+  display: block;
+  font-family: sans-serif;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.list ul {
+  font-family: serif;
+  font-size: 1.1rem;
+}
+.list ul li {
+  border-bottom: 1px solid gray;
+  margin-bottom: 0.5rem;
+}
+.paintings {
+  grid-area: paintings;
+}
+.current {
+  grid-area: current;
+}
+.current .message {
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  margin-bottom: 5rem;
+}
+.current button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid gray;
+  border-radius: 3rem;
+  background-color: #f1f1f1;
+}
+.current button:hover {
+  background-color: #e0e0e0;
+}
+.current button:active {
+  background-color: #7e7e7e;
+}
+.current button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.members {
+  grid-area: members;
+}
+.modal-settings {
+  --scale: 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(var(--scale));
+  transition: transform 0.2s;
+  background: #eeeeee;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 150;
+}
+.modal-settings > span {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #d05555;
+}
+.modal-settings .close {
+  position: absolute;
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.modal-settings.show {
+  --scale: 1;
+}
+.modal-settings.show + .overlay-settings {
+  opacity: 1;
+  pointer-events: all;
+}
+.overlay-settings {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 140;
+}
+/*# sourceMappingURL=config.css.map */

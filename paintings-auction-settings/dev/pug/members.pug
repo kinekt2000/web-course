@@ -1,0 +1,25 @@
+extends modules/common
+
+block styles
+    link(rel="stylesheet" href="./build/styles/members.css")
+
+block scripts
+    script(src="https://kit.fontawesome.com/9c59c371af.js" crossorigin="anonymous")
+    script(src="./build/scripts/members.js")
+
+block content
+    .wrapper
+    button.add(type="button")
+        i.fas.fa-user-plus
+    form.add-user-modal(action="members" method="POST")
+        button.close(type="button"): i.fas.fa-times
+        .input.input-name
+            input#name(type="text", name="name", placeholder="Name", required, minlength="3", maxlength="30")
+            label(for="name") Name
+
+        .input.input-fund
+            input#fund(type="number" name="fund", placeholder="Fund")
+            label(for="fund") Fund
+
+        button(type="submit") Submit
+    #overlay

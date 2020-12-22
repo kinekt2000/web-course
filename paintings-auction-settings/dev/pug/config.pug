@@ -1,0 +1,69 @@
+extends modules/common
+
+block styles
+    link(rel="stylesheet" href="./build/styles/config.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+
+block scripts
+    script(src="https://kit.fontawesome.com/9c59c371af.js" crossorigin="anonymous")
+    script(defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+    script(src="./build/scripts/config.js")
+
+
+block content
+    .wrapper
+        .paintings.list
+            span Paintings
+            ul
+        .members.list
+            span Members
+            ul
+        .current
+            .input-field.date
+                label.active(for="date") Date
+                input.datepicker#date(type="text")
+
+            .input-field.time
+                label.active(for="time") Time
+                input.timepicker#time(type="text")
+
+            .input-field.timeout
+                label.active(for="timeout") Timeout
+                input.timepicker#timeout(type="text")
+
+            .input-field.countdown
+                label.active(for="countdown") Countdown
+                input.timepicker#countdown(type="text")
+
+            .input-field.pause
+                label.active(for="pause") Pause
+                input.timepicker#pause(type="text")
+
+            button.settings: i.fas.fa-cog
+
+    .modal-settings
+        button.close(type="button"): i.fas.fa-times
+        .input-field.date
+            label.active(for="date") Date
+            input.datepicker#user-date(type="text" required)
+
+        .input-field.time
+            label.active(for="time") Time
+            input.timepicker#user-time(type="text" required)
+
+        .input-field.timeout
+            label.active(for="timeout") Timeout
+            input.timepicker#user-timeout(type="text" required)
+
+        .input-field.countdown
+            label.active(for="countdown") Countdown
+            input.timepicker#user-countdown(type="text" required)
+
+        .input-field.pause
+            label.active(for="pause") Pause
+            input.timepicker#user-pause(type="text" required)
+
+        button.btn#submit(type="button") Submit
+    .overlay-settings
+
+

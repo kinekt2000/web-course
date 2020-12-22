@@ -1,0 +1,28 @@
+extends modules/common
+
+block styles
+    link(rel="stylesheet" href="./build/styles/index.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+
+block scripts
+    script(src="https://kit.fontawesome.com/9c59c371af.js" crossorigin="anonymous")
+    script(src="./build/scripts/index.js")
+    script(defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+
+block content
+    div.list
+        - for(let i = 0; i < 4; i++)
+            .painting-wrapper.dummy
+
+    .upload-modal
+        form
+            button.close(type="button"): i.fas.fa-times
+            .file-field.input-field
+                .btn
+                    span File
+                    input(type="file" name="image")
+                .file-path-wrapper
+                    input.file-path.validate(type="text")
+            input#upload-id(type="text" name="id")
+            button.btn.upload-submit(type="button") Submit
+        .locker

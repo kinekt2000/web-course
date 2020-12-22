@@ -1,0 +1,194 @@
+.wrapper {
+  --border-color: #c3c3c3;
+  --background-color: #f1f1f1;
+  padding: 5rem 2rem 1rem;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  border-top: 1px solid var(--border-color);
+}
+li:last-of-type {
+  border-bottom: 1px solid var(--border-color);
+}
+.member-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.member-wrapper .member-field {
+  font-family: sans-serif;
+  padding: 0.5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.member-wrapper .member-field:first-of-type {
+  padding-right: 0.5rem;
+  margin-left: 1rem;
+  border-right: 1px solid var(--border-color);
+  background: linear-gradient(to right, #fff, var(--background-color));
+}
+.member-wrapper .member-field:last-of-type {
+  padding-left: 0.5rem;
+  margin-right: 1rem;
+  background: linear-gradient(to left, #fff, var(--background-color));
+}
+.member-wrapper .member-field button {
+  border: 1px solid gray;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+.member-wrapper .member-field button:focus {
+  outline: none;
+}
+.member-wrapper .member-field span {
+  padding: 0.1rem;
+}
+.member-wrapper .member-field span:focus {
+  border: 1px black solid;
+  background-color: white;
+}
+.member-wrapper > button {
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  border: 1px solid gray;
+  background-color: #ffdede;
+  border-radius: 2rem;
+}
+.member-wrapper > button:hover {
+  box-shadow: inset 0 0 2rem 2rem rgba(255, 0, 0, 0.2);
+}
+.add {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.4rem;
+  border: 1px solid gray;
+  background-color: #e7ffcc;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
+}
+.add:hover {
+  box-shadow: inset 0 0 4rem 4rem rgba(0, 128, 0, 0.2);
+}
+/* Remove input arrows */
+/* Chrome Safari Opera Edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.add-user-modal {
+  --scale: 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(var(--scale));
+  transition: transform 0.2s;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 250;
+}
+.add-user-modal.show {
+  --scale: 1;
+}
+.add-user-modal.show + #overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+.add-user-modal .close {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+.add-user-modal .input {
+  position: relative;
+  padding: 1rem 0;
+  width: 100%;
+}
+.add-user-modal input {
+  font-family: sans-serif;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #c3c3c3;
+  outline: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: black;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.add-user-modal input::placeholder {
+  color: transparent;
+}
+.add-user-modal input:placeholder-shown + label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 1rem;
+}
+.add-user-modal input:focus {
+  border-width: 3px;
+  border-image: linear-gradient(to right, #c3c3c3, #7e7e7e) 1;
+}
+.add-user-modal input:focus + label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+}
+.add-user-modal input:required,
+.add-user-modal input:invalid {
+  box-shadow: none;
+}
+.add-user-modal label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: gray;
+}
+.add-user-modal button {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  outline: none;
+  cursor: pointer;
+}
+#overlay {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 200;
+}
+/*# sourceMappingURL=members.css.map */

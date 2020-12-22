@@ -1,0 +1,34 @@
+mixin menu
+    .menu-wrap
+        input.toggler(type="checkbox")
+        .hamburger: div
+        .menu: div#menu-overlay: div
+            ul
+                li: a(href="/") Home
+                li: a(href="/config") Auction
+                li: a(href="/members") Members
+
+html
+    head
+        meta(charset="UTF-8")
+        title Auction
+
+        script(type="text/javascript" src="./build/scripts/extLib/jquery.js")
+        script(src="./build/scripts/common.js")
+
+        link(rel="stylesheet" type="text/css" href="./build/styles/common.css")
+        link(rel="shortcut icon" href="/favicon.ico")
+
+        block styles
+        block scripts
+
+    body
+        +menu
+        header
+            h1.site-name Paintings Auction
+
+        main
+            block content
+
+        footer
+            span Paintings Auction by John C. Alastor
