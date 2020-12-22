@@ -1,0 +1,71 @@
+.deal-block-wrapper > div {
+    position: relative;
+    margin: 0 auto;
+    width: fit-content;
+    border: 1px solid black;
+    min-width: 200px;
+}
+
+.deal-block-wrapper header {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .5rem 0;
+    border-bottom: 1px solid black;
+}
+
+.deal-block-wrapper .deal-block-data {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.price {
+    text-align: center;
+}
+
+.price span:first-of-type {
+    margin-right: .5rem;
+}
+
+small{
+    text-align: center;
+}
+
+.deal-block-wrapper .submit {
+    border: 1px solid black;
+    margin-top: .8rem;
+    width: fit-content;
+    padding: .4rem .8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.deal-block-wrapper .close {
+    position: absolute;
+    top: .1rem;
+    right: .1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.deal-block-data input::-webkit-outer-spin-button,
+.deal-block-data input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.deal-block-data input[type=number] {
+    -moz-appearance: textfield;
+}

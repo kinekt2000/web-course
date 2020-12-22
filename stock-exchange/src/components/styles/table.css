@@ -1,0 +1,42 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    margin: 1rem 0;
+}
+
+caption {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:not(:first-of-type) {
+    cursor: pointer;
+}
+
+tr:not(:first-of-type):hover {
+    background-color: #c1c1c1;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

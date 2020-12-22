@@ -1,0 +1,38 @@
+
+.enter-wrapper {
+    width: 400px;
+    margin: auto;
+    padding-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enter-wrapper .input-field {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: .8rem;
+}
+
+.enter-wrapper button {
+    font-family: sans-serif;
+    font-weight: bold;
+
+    background-color: transparent;
+    border: 1px solid black;
+    padding: .3rem .5rem;
+
+    cursor: pointer;
+}
+
+.enter-wrapper button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.enter-wrapper button:active {
+    box-shadow: inset 1px 1px 1px 0 gray,
+                      1px 1px 1px 0 gray;
+
+}

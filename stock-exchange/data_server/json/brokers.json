@@ -1,0 +1,27 @@
+[
+ {
+  "username": "samplename",
+  "name": "Testik Testikov",
+  "fund": 1111111
+ },
+ {
+  "username": "ellenore",
+  "name": "Elisabeth",
+  "fund": 728422432
+ },
+ {
+  "username": "alastor",
+  "name": "John",
+  "fund": 9999999
+ },
+ {
+  "username": "kinekt",
+  "name": "Sample Name",
+  "fund": "23423"
+ },
+ {
+  "username": "popop",
+  "name": "Brunkelshuttendolf",
+  "fund": "345345"
+ }
+]

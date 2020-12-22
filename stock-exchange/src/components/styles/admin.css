@@ -1,0 +1,154 @@
+.table-broker-shares {
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+#interval::-webkit-outer-spin-button,
+#interval::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#interval {
+    -moz-appearance: textfield;
+}
+
+.interval-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interval-wrapper label {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.interval-wrapper input {
+    font-size: 1rem;
+}
+
+.interval-message {
+    text-align: center;
+}
+
+.control {
+    margin: 1rem;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: .4rem .8rem;
+    cursor: pointer;
+}
+
+.control:hover {
+    background-color: #f0f0f0;
+    box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, .5);
+}
+
+.control:active {
+    box-shadow: inset 2px 2px 2px -1px rgba(0, 0, 0, .5);;
+}
+
+.modal {
+    --scale: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(var(--scale));
+    background-color: white;
+    z-index: 10;
+    min-width: 300px;
+    text-align: center;
+}
+
+.modal-header {
+    border-bottom: 1px solid black;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-body label {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+}
+
+.modal-body select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    font-size: 1rem;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    padding: .4rem .8rem;
+}
+
+.select-wrapper{
+    align-self: stretch;
+    display: flex;
+    position: relative;
+}
+
+.select-wrapper:after {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+
+    content: "";
+    border: .4rem solid transparent;
+    border-top: .4rem solid black;
+}
+
+.submit{
+    background-color: whitesmoke;
+    border: 1px solid black;
+    margin-top: .5rem;
+    font-size: 1rem;
+    padding: .2rem .6rem;
+}
+
+.submit:hover {
+    background-color: #f0f0f0;
+    box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, .5);
+}
+
+.submit:active {
+    box-shadow: inset 2px 2px 2px -1px rgba(0, 0, 0, .5);
+}
+
+
+.modal-body select::-ms-expand{
+    display: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
