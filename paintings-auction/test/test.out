@@ -1,0 +1,158 @@
+
+
+  paintings
+    properties 0
+      ✓ has property id
+      ✓ has property name
+      ✓ has property author
+      ✓ has property price
+      ✓ has property step
+      ✓ has property description
+    types 0
+      ✓ id is number type
+      ✓ name is string type
+      ✓ author is string type
+      ✓ price is number type
+      ✓ step is number type
+      ✓ description is string type
+    properties 1
+      ✓ has property id
+      ✓ has property name
+      ✓ has property author
+      ✓ has property price
+      ✓ has property step
+      ✓ has property description
+    types 1
+      ✓ id is number type
+      ✓ name is string type
+      ✓ author is string type
+      ✓ price is number type
+      ✓ step is number type
+      ✓ description is string type
+    properties 2
+      ✓ has property id
+      ✓ has property name
+      ✓ has property author
+      ✓ has property price
+      ✓ has property step
+      ✓ has property description
+    types 2
+      ✓ id is number type
+      ✓ name is string type
+      ✓ author is string type
+      ✓ price is number type
+      ✓ step is number type
+      ✓ description is string type
+    properties 3
+      ✓ has property id
+      ✓ has property name
+      ✓ has property author
+      ✓ has property price
+      ✓ has property step
+      ✓ has property description
+    types 3
+      ✓ id is number type
+      ✓ name is string type
+      ✓ author is string type
+      ✓ price is number type
+      ✓ step is number type
+      ✓ description is string type
+
+  users
+    properties 0
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 0
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+    properties 1
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 1
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+    properties 2
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 2
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+    properties 3
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 3
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+    properties 4
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 4
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+    properties 5
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 5
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+    properties 6
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 6
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+    properties 7
+      ✓ has property id
+      ✓ has property name
+      ✓ has property fund
+    types 7
+      ✓ id is number type
+      ✓ name is string type
+      ✓ fund is number type
+
+  config
+    date
+      ✓ format is 'yy/mm/dd'
+      1) date validation
+    time properties
+      ✓ time validation
+      ✓ timeout validation
+      ✓ countdown validation
+      ✓ pause validation
+
+
+  101 passing (25ms)
+  1 failing
+
+  1) config
+       date
+         date validation:
+
+      AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+12 !== 11
+
+      + expected - actual
+
+      -12
+      +11
+      
+      at Context.<anonymous> (test/test.js:119:20)
+      at processImmediate (internal/timers.js:456:21)
+
+
+

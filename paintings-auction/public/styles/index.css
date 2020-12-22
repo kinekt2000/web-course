@@ -1,0 +1,187 @@
+form{
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.input-field {
+    --color: #5264AE;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-field input {
+    font-size: 1.3rem;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+.input-field input:focus,
+.input-field input:invalid{
+    outline: none;
+    box-shadow: none;
+}
+
+.input-field input:invalid {
+    --color: #f54848;
+}
+
+.input-field label {
+    color: #999;
+    font-size: 1.3rem;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 0;
+    -webkit-transition: 0.2s ease all;
+            transition: 0.2s ease all;
+       -moz-transition: 0.2s ease all;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+    top: -20px;
+    font-size: 1rem;
+    color: var(--color);
+}
+
+.input-field .bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+.input-field .bar::before,
+.input-field .bar::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--color);
+    -webkit-transition: 0.2s ease all;
+       -moz-transition: 0.2s ease all;
+            transition: 0.2s ease all;
+}
+
+.input-field .bar::before {
+    left: 50%;
+}
+
+.input-field .bar::after {
+    right: 50%;
+}
+
+.input-field input:focus ~ .bar::before,
+.input-field input:focus ~ .bar::after{
+    width: 50%;
+}
+
+.input-field .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 20px;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form button {
+    margin: 0;
+    padding: 0;
+
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+
+    width: 7rem;
+    height: 1.5rem;
+    position: relative;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    border: none;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+}
+
+form button::before,
+form button::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+form button::after{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    content: "Submit";
+}
+
+form button::before {
+    --scale: 0;
+    --opacity: 0.1;
+
+    content: "";
+
+    width: 100%;
+    height: 500%;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, var(--opacity));
+
+    transform: translateX(-50%) translateY(-50%) scale(var(--scale));
+    transition: transform 0.2s ease;
+}
+
+form button:hover {
+    box-shadow: none;
+    filter: none;
+}
+
+form button:hover::before {
+    --scale: 1;
+}
+
+
+.input-field:focus ~.highlight {
+    -webkit-animation: input-highlighter 0.3s ease;
+       -moz-animation: input-highlighter 0.3s ease;
+            animation: input-highlighter 0.3s ease;
+}
+
+@-webkit-keyframes input-highlighter {
+    from { background: var(--color); }
+    to { width: 0; background: transparent}
+}
+
+@-moz-keyframes input-highlighter {
+    from { background: var(--color); }
+    to { width: 0; background: transparent}
+}
+
+@keyframes input-highlighter {
+    from { background: var(--color); }
+    to { width: 0; background: transparent}
+}
+

@@ -1,0 +1,37 @@
+extends modules/common
+
+block styles
+    link(rel="stylesheet" type="text/css" href="/public/styles/admin.css")
+
+block scripts
+    script(type="text/javascript" src="http://localhost:3030/socket.io/socket.io.js")
+    script(type="text/javascript" src="/public/scripts/admin.js")
+
+block content
+    .data-wrapper
+        #users
+            ul
+                -for(const user of users)
+                    li: span=user.name
+        #trading-state
+            ul
+    .wrapper
+        -for (let i = 0; i < tradingState.length; i++)
+                .painting-block
+                    img(src=`/public/images/${tradingState[i].id}.jpg` alt=paintings[i].name)
+                    div.painting-name=paintings[i].name
+                    div.price
+                        div=`min price: ${paintings[i].price}`
+                        div
+                            span=`current: `
+                            span.current=`${tradingState[i].currentPrice}`
+
+                    - if(tradingState[i].sold)
+                        p.sold SOLD
+                    - else
+                        p.notsold NOT SOLD
+
+                    - if (tradingState[i].buyer)
+                        p.buyer=users[tradingState[i].buyer].name
+                    - else
+                        p.buyer

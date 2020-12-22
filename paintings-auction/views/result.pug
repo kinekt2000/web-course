@@ -1,0 +1,16 @@
+extends modules/common
+
+block styles
+    link(rel="stylesheet" type="text/css" href="/public/styles/result.css")
+
+block content
+    .wrapper
+        -for(let i = 0; i < tradingState.length; i++)
+            .painting-block
+                img(src=`/public/images/${tradingState[i].id}.jpg` alt=paintings[i].name)
+                div.painting-name=paintings[i].name
+                - if(tradingState[i].buyer)
+                    p.sold SOLD
+                    p.buyer=users[tradingState[i].buyer].name
+                - else
+                    p.notsold NOT SOLD

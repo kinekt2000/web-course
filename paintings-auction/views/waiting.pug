@@ -1,0 +1,23 @@
+extends modules/common
+
+block styles
+    link(rel="stylesheet" type="text/css" href="/public/styles/waiting.css")
+
+block scripts
+    script(type="text/javascript" src="/public/scripts/waiting.js")
+    script(type="text/javascript" src="http://localhost:3030/socket.io/socket.io.js")
+
+block content
+    - if (time)
+        div.time(data-time=time)
+            .message: p Auction will start soon
+            .timer-wrapper
+                span.minutes
+                span :
+                span.seconds
+
+    - else
+        div.wait
+            .message
+                p Auction has not started
+                p Come back later

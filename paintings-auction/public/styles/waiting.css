@@ -1,0 +1,35 @@
+.message {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 5rem;
+}
+
+.message p:first-of-type {
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.message p:last-of-type {
+    font-size: 3rem;
+}
+
+.timer-wrapper {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.timer-wrapper span {
+    font-size: 5rem;
+}
+
+.timer-wrapper .minutes,
+.timer-wrapper .seconds {
+    width: 5rem;
+    height: 5rem;
+}
+
+.timer-wrapper .minutes {
+    text-align: right;
+    margin-right: 1rem;
+}

@@ -1,0 +1,97 @@
+extends modules/common
+
+
+block styles
+    link(rel="stylesheet" type="text/css" href="/public/styles/extLib/jquery-ui.min.css")
+    link(rel="stylesheet" type="text/css" href="/public/styles/dash.css")
+
+block scripts
+    script(src="https://kit.fontawesome.com/9c59c371af.js" crossorigin="anonymous")
+    script(type="text/javascript" src="/public/scripts/extLib/jquery-ui.js")
+    script(type="text/javascript" src="/public/scripts/dash.js")
+    script(type="text/javascript" src="http://localhost:3030/socket.io/socket.io.js")
+
+block content
+    .wrapper
+        .user-portlets
+            .portlet#balance
+                .portlet-header=`Balance ${name}`
+                .portlet-content
+                    .data-block
+                        span.label Fund:
+                        span.data=fund
+                    .data-block
+                        span.label Residual:
+                        span.data=residual
+
+            .portlet#purchases
+                .portlet-header Purchases
+                .portlet-content
+                    .data-block
+                        .label Leading:
+                        ul#leading-list
+                            - for(const pName of leading)
+                                li: div=pName
+                    .data-block
+                        .label Purchased:
+                        ul#purchase-list
+                            - for(const pName of purchase)
+                                li: div=pName
+
+            .portlet#duration
+                .portlet-header Duration
+                .portlet-content
+                    .data-block#timeout
+                        span.label Timeout:
+                        span.data
+                    .data-block#tillend
+                        span.label Till End:
+                        span.data=`${Math.floor(countdown/60)}:${countdown%60}`
+
+            .portlet#info
+                .portlet-header Trading Progress
+                .portlet-content
+                    ul#trading
+
+            .portlet#price-setting
+                .portlet-header Price Setting
+                .portlet-content
+                    div your price
+                    .user-price
+                    .price-setters
+                        button(type="button" onclick="up()"): i.fas.fa-plus
+                        button(type="button" onclick="down()"): i.fas.fa-minus
+                    button#raise(type="button") raise
+
+
+
+        .image-field
+            .buttons
+                button#prev(type="button").disabled: i.fas.fa-chevron-left
+                button#next(type="button").disabled: i.fas.fa-chevron-right
+            .image-wrapper
+            .data-wrapper
+                .description
+                    .data-block#painting-name
+                        span.label Name
+                        span.data
+                    .data-block#painting-author
+                        span.label Author
+                        span.data
+                    .data-block#description
+                        span.label Description:
+                        p.data
+
+
+                .data-block.starting-price
+                    span.label Starting Price:
+                    span.data
+                .data-block.current-price
+                    span.label Current Price:
+                    span.data
+                .data-block.customer.absent
+                    span.label Customer:
+                    span.data absent
+                .data-block.status
+                    span.label Status:
+                    span.data In the auction

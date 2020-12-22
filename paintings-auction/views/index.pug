@@ -1,0 +1,18 @@
+extends modules/common
+
+block styles
+    link(rel="stylesheet" type="text/css" href="./public/styles/index.css")
+
+block scripts
+    script(type="text/javascript" src="./public/scripts/index.js")
+
+block content
+    form(action="dash" method="get")
+        .input-field
+            input#name(name="name" type="text" required)
+            span.highlight
+            span.bar
+            label(for="name") Name
+        button(type="submit")
+
+
