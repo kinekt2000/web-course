@@ -1,0 +1,109 @@
+extends module/common.pug
+
+block scripts
+    script(src="/public/script/book.js")
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/public/css/book.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+
+block content
+    #id= book.id
+    .book-wrapper
+        - if (authorized && authorized.username === "admin")
+            button.delete(type="button")
+                i.fa.fa-trash(aria-hidden="true")
+            script.
+                ajaxRequest(
+                    "DELETE",
+                    "/delete",
+                    () => {
+                        location.href="/";
+                    },
+                    () => {
+
+                    },
+                    `id=${book.id}`
+                )
+
+        .cover-and-meta-data
+            .cover-wrapper
+                span there can be cover
+            .meta-data
+                p.book-name
+                    span.label Name:
+                    span.data#name= book.name
+
+                    - if (authorized && authorized.username === "admin")
+                        button.edit(type="button", data-field="name")
+                            i.fa.fa-pencil(aria-hidden="true")
+
+                p.book-author
+                    span.label Author:
+                    span.data#author= book.author
+
+                    - if (authorized && authorized.username === "admin")
+                        button.edit(type="button", data-field="author")
+                            i.fa.fa-pencil(aria-hidden="true")
+
+                p.publication
+                    span.label Published:
+                    span.data#publication= book.publication
+
+                    - if (authorized && authorized.username === "admin")
+                        button.edit(type="button", data-field="publication")
+                            i.fa.fa-pencil(aria-hidden="true")
+
+                .renting-block
+                    - if (book.renting)
+                        p.status
+                            - if (authorized && authorized.username === book.renting.username)
+                                span.yours you rented this book
+
+                            - else
+                                span.unavailable unavailable
+
+                            - if (authorized && authorized.username === "admin" && book.renting.username !== "admin")
+                                p.renting-name
+                                span.label Rented by:
+                                span.data#renting-name= book.renting.name
+                                span.data#renting-username= `(${book.renting.username})`
+
+                            p.release-date
+                            span.label Till:
+                            span.data#release-date= book.renting.releaseDate
+                    - else
+                        p.status
+                            span.available available
+
+
+        .description
+            span.label Description:
+            div.data#description-data
+            - if (authorized && authorized.username === "admin")
+                button.edit(type="button", data-field="description-data")
+                    i.fa.fa-pencil(aria-hidden="true")
+
+        .rent-wrapper
+
+            - if (authorized && book.renting && authorized.username === book.renting.username)
+                button.renting#unrent(onclick="unrent()")
+                    span return book
+            - else
+                button.renting#rent(onclick="rent()")
+                    span rent book
+
+                - if (!authorized || book.renting)
+                    script.
+                        document.getElementById("rent").setAttribute("disabled", "true")
+
+                - if (book.renting)
+                    span Sorry. This book is already rented
+                - else
+                    -if (!authorized)
+                        span You should authorize for renting
+
+    script.
+        contentLoaded();
+
+

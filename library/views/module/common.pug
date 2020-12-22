@@ -1,0 +1,59 @@
+html
+    head
+        meta(charset="UTF-8")
+        title Home Library
+        link(rel="stylesheet", type="text/css", href="/public/css/common.css")
+        link(rel="icon", href="/public/images/favicon.ico")
+
+        script(src="/public/script/common.js")
+        script(src="/public/script/ajax.js")
+
+        block styles
+        block scripts
+
+    body(onload="onLoad()")
+        - if (authorized)
+            #user= JSON.stringify(authorized)
+
+        header
+            .header-banner
+                h1 Home&ensp;Library
+            nav#sticky-bar
+                .site-title#site-name Home&ensp;Library
+
+                - if (authorized)
+                    - if (authorized.username === "admin")
+                        .username.admin(onclick="location.href='/admin'")= authorized.username
+                    - else
+                        .username= authorized.username
+                ul
+                    - if (authorized)
+                        li#log-out(onclick="logout()") Log Out
+                    - else
+                        li(data-modal-target="#modal" data-modal-type="sign-in") Log In
+                        li(data-modal-target="#modal" data-modal-type="sign-up") Sign Up
+
+                    li(onclick="location.href='/suggest'") Suggest New Book
+                    li(onclick="location.href='/'") Home
+
+            include ../include/login.pug
+
+
+        section.content
+            - if (messages.error)
+                .flash.error= messages.error
+            - if (messages.success)
+                .flash.success= messages.success
+            script(type="text/javascript").
+                flashLoad()
+
+            block content
+
+        footer
+            div
+                span Library web-application. Created by John C. Alastor
+
+
+
+
+

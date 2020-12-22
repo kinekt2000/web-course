@@ -1,0 +1,52 @@
+extends module/common.pug
+
+mixin setDummyBlocks()
+    .book-block.dummy-book
+    .book-block.dummy-book
+    .book-block.dummy-book
+
+block scripts
+    script(src="/public/script/index.js")
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/public/css/index.css")
+
+
+block content
+    .filter-selector
+        button.clear(type="button", onclick="clearFilter()") clear filter
+        div
+            label(for="available") Show available books
+            input(type="radio", id="available", name="filter")
+
+        div
+            label(for="unavailable") Show rented book
+            input(type="radio", id="unavailable", name="filter")
+            .date-input
+                span Date of return
+                #publication
+                    div.input
+                        label(for="year") year
+                        input#year(type="number", min="1000", max="9999", name="year", oninput="checkDate()")
+
+                    div.input
+                        label(for="month") month
+                        input#month(type="number", min="1", max="12", name="month", oninput="checkDate()")
+
+                    div.input
+                        label(for="day") day
+                        input#day(type="number", min="1", max="31", name="day", oninput="checkDate()")
+
+        button.filter(type="button" onclick="applyFilter()") Apply filter
+
+
+    .books-wrapper()
+        +setDummyBlocks
+
+    .page-state
+        input.show-page-state(type="checkbox")
+        span state message
+    script getBooks(0, 3, initiate)
+
+
+

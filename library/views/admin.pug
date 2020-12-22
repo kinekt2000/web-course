@@ -1,0 +1,23 @@
+extends module/common.pug
+
+block scripts
+    script(src="/public/script/admin.js")
+
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/public/css/admin.css")
+
+block content
+    .wrapper
+        .buttons
+            button.rewrite-library(type="button")
+                span library
+            button.rewrite-suggestions(type="button")
+                span suggestions
+        .list
+        .load-state
+            span
+        button.load-more load more
+
+    script.
+        loadMore()

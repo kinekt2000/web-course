@@ -1,0 +1,186 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+
+    padding: 1rem 0 0 0;
+    overflow: hidden;
+
+    background-color: #e3e3e3;
+    border-radius: 25px;
+}
+
+.wrapper .buttons {
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper .buttons button {
+    position: relative;
+
+    height: 3rem;
+    width: 10rem;
+
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+
+    border: none;
+
+    padding: 0;
+    margin-bottom: 1rem;
+
+    border-radius: 1rem;
+    overflow: hidden;
+
+
+    box-shadow: inset 0 0 1px 0 #919191;
+}
+
+.wrapper .buttons button span{
+    position: relative;
+    text-align: center;
+}
+
+.wrapper .buttons button::before {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background-color: #919191;
+    transform: scale(0);
+    border-radius: 1rem;
+
+    -webkit-transition: transform 0.5s ease;
+            transition: transform 0.5s ease;
+}
+
+.wrapper .buttons button:hover::before {
+    transform: scale(1);
+}
+
+.wrapper .list {
+    width: 80%;
+    min-height: 600px;
+
+    margin: 2rem auto 8rem;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f3f3f3;
+}
+
+.suggestion {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid black;
+}
+
+.suggestion div {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion div span:first-of-type{
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.suggestion div span:last-of-type {
+    font-family: serif;
+    font-size: 1.5rem;
+}
+
+.suggestion:first-of-type {
+    border-top: 1px solid black;
+}
+
+.suggestion button {
+    position: absolute;
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    right: 1rem;
+
+    border: none;
+    box-shadow: inset 0 0 2px 0 #919191;
+
+    transition: background-color 0.3s ease;
+}
+
+.accept {
+    top: 1rem;
+    background-color: #67bc67;
+}
+
+.accept:hover {
+    background-color: #248f24;
+}
+
+.reject {
+    bottom: 1rem;
+    background-color: #c46969;
+}
+
+.reject:hover {
+    background-color: #b10c0c;
+}
+
+i {
+    font-family: sans-serif;
+    font-style: normal;
+    width: 3rem;
+    height: 3rem;
+
+    position: absolute;
+    left: 50%;
+    top: 56%;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    color: black;
+    font-size: 2rem;
+}
+
+.load-more {
+    position: absolute;
+    bottom: 0;
+
+    border-top: 1px solid #919191;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+
+    background-color: #e3e3e3;
+
+    font-family: sans-serif;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    width: 100%;
+    height: 3rem;
+
+    transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+    background-color: #919191;
+}

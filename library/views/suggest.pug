@@ -1,0 +1,39 @@
+extends module/common.pug
+
+block scripts
+    script(src="/public/script/suggest.js")
+
+block styles
+    link(rel="stylesheet", type="text/css", href="/public/css/suggest.css")
+
+block content
+    form.suggestion(action="/suggest" method="POST")
+        div.input
+            label(for="book-name") Name
+            input#book-name(type="text", required, name="name")
+
+        div.input
+            label(for="book-author") Author
+            input#book-author(type="text", required, name="author")
+
+        div.input
+            label(for="publication") Publication Date
+            //input#publication(type="date", onchange="checkDate()")
+            #publication
+                div.input
+                    label(for="year") year
+                    input#year(type="number", min="1000", max="9999", required, name="year", oninput="checkDate()")
+
+                div.input
+                    label(for="month") month
+                    input#month(type="number", min="1", max="12", name="month", oninput="checkDate()")
+
+                div.input
+                    label(for="day") day
+                    input#day(type="number", min="1", max="31", name="day", oninput="checkDate()")
+
+        button(type="submit")
+            span suggest
+
+    script.
+        checkDate()

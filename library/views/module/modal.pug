@@ -1,0 +1,14 @@
+link(rel="stylesheet", type="text/css", href="/public/css/modal.css")
+block modal-style
+
+.modal#modal
+    .modal-header
+        block modal-header
+        button.close-button(data-modal-close type="button") &times;
+    .modal-body
+        block modal-content
+
+#overlay
+
+script(src="/public/script/modal.js")
+block modal-scripts

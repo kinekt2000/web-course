@@ -1,0 +1,318 @@
+#id {
+    display: none;
+}
+
+.book-wrapper {
+    position: relative;
+    background-color: #e3e3e3;
+    border-radius: 25px;
+
+    width: 100%;
+
+    padding: 1rem;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 5rem;
+    height: 5rem;
+
+    border: none;
+    box-shadow: inset 0 0 2px 0 #000000;
+    border-radius: 50%;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-and-meta-data {
+    min-height: 650px;
+    display: flex;
+}
+
+.cover-wrapper {
+    width: 50%;
+    min-width: 50%;
+    min-height: 600px;
+
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 1rem 2rem 2rem 1rem;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meta-data {
+    padding-top: 5%;
+    min-height: 50%;
+    margin-right: 1rem;
+    flex-grow: 1;
+}
+
+.meta-data p {
+    position: relative;
+}
+
+.meta-data span {
+    margin-right: 2rem;
+}
+
+span.label {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 3px;
+
+    display: block;
+}
+
+span.data {
+    font-family: serif;
+    font-size: 1.2rem;
+
+}
+
+span.data:focus {
+    outline: none;
+    background-color: white;
+    border: 2px solid gray;
+}
+
+.renting-block {
+    margin-top: 3rem;
+    border: 3px dashed #484848;
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+.renting-block .status {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 2px;
+
+    text-align: center;
+    margin-top: 0.5rem;
+
+    text-transform: uppercase;
+}
+
+.renting-block .available {
+    color: #248f24;
+}
+
+.renting-block .unavailable {
+    color: #b30000;
+}
+
+.renting-block span {
+    margin-right: 1rem;
+}
+
+.renting-block span.data {
+    font-family: serif;
+    font-size: 1.5rem;
+}
+
+.description {
+    position: relative;
+    min-height: 300px;
+    border: 1px dashed black;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.description .data {
+    flex-grow: 1;
+}
+
+.description .data:focus {
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+button.edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 2rem;
+    height: 2rem;
+
+    border: none;
+    border-radius: 50%;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.edit i {
+    position: relative;
+    color: #414141;
+    font-size: 125%;
+    -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+}
+
+button.edit::before,
+button.edit::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+    border-radius: 30px;
+}
+
+button.edit::after {
+    box-shadow: 0 0 0 1px #7c7c7c;
+}
+
+button.edit::before {
+    background: #7c7c7c;
+    box-shadow: inset 0 0 0 60px #cdcdcd;
+}
+
+button.edit:hover::before {
+    box-shadow: inset 0 0 0 1px #cdcdcd;
+}
+
+.rent-wrapper {
+    margin-top: 1rem;
+    min-height: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rent-wrapper button {
+    position: relative;
+
+    width: 10rem;
+    height: 5rem;
+    margin: 0.2rem;
+
+    box-shadow: inset 0 0 0 2px #7c7c7c;
+    border: none;
+    border-radius: 2rem;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #caeaba;
+}
+
+.rent-wrapper button::before {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background-color: #919191;
+    transform: scale(0);
+    border-radius: 1rem;
+
+    -webkit-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+.rent-wrapper button:disabled {
+    background-color: #e59999;
+}
+
+.rent-wrapper button>span {
+    position: relative;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #2b2b2b;
+}
+
+.rent-wrapper>span {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.delete {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    width: 3rem;
+    height: 3rem;
+
+    border: none;
+    box-shadow: inset 0 0 2px 0 #7c7c7c;
+    border-radius: 50%;
+    background-color: #ff4646;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete i {
+    position: relative;
+    font-size: 2rem;
+}
+
+
+.delete::before {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background-color: #91919188;
+    transform: scale(0);
+    border-radius: 50%;
+
+    -webkit-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+.rent-wrapper button:enabled:hover::before,
+.delete:hover::before {
+    transform: scale(1);
+}

@@ -1,0 +1,43 @@
+extends ../module/modal.pug
+
+block modal-style
+    link(rel="stylesheet" type="text/css" href="/public/css/login.css")
+
+block modal-header
+    .title
+        span log in
+        span or
+        span sign up
+
+block modal-content
+    .global-container#global-container
+        .form-container.sign-up-container
+            form(action="/register" method="POST")
+                h1 Create Account
+                input(type="text", name = "username", placeholder="Username", required="required", minlength="5")
+                input(type="text", name="name", placeholder="Name", required="required", minlength="5")
+                input#pass(type="password", name="password", placeholder="Password", required="required", minlength="5")
+                input#cpass(type="password", placeholder="Confirm Password", required="required", oninput="checkPassword()")
+                button(type="submit") Sign Up
+
+        .form-container.sign-in-container
+            form(action="/login" method="POST")
+                h1 Sign In
+                input(type="text", name="username", placeholder="Username", required="required", minlength="5")
+                input(type="password" name="password", placeholder="Password", required="required", minlength="5")
+                button(type="submit") Sign In
+
+        .overlay-container
+            .overlay
+                .overlay-panel.overlay-left
+                    h1 Welcome Back!
+                    p To keep connected with us please login with your personal info
+                    button.ghost#sign-in Sign In
+                .overlay-panel.overlay-right
+                    h1 Hello, Friend!
+                    p Enter your personal details and join us
+                    button.ghost#sign-up Sign Up
+
+
+block modal-scripts
+    script(src="/public/script/login.js")

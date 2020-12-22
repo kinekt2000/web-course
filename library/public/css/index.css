@@ -1,0 +1,354 @@
+.filter-selector {
+    width: 28rem;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    background-color: #e3e3e3;
+    border-radius: 25px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-selector>div {
+    margin: 0.3rem;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter-selector>div>input {
+    width: 2rem;
+    height: 2rem;
+
+    margin-top: 0;
+    margin-right: 2rem;
+}
+
+.date-input {
+    margin: 0.5rem;
+    height: 0;
+
+    overflow: hidden;
+    transition: height 0.5s ease-in;
+}
+
+#unavailable:checked+.date-input{
+    height: 6rem;
+}
+
+.date-input span {
+    margin-bottom: 1rem;
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.date-input div label {
+    display: block;
+}
+
+/* Firefox */
+input[type=number] {
+    font-family: sans-serif;
+    font-size: 1rem;
+    text-align: center;
+
+    background-color: #f3f3f3;
+    height: 2rem;
+    border: none;
+    box-shadow: inset 0 0 2px 0 #838383;
+    border-radius: 1rem;
+
+    -moz-appearance: textfield;
+
+    transition: background-color 0.3s ease,
+                border-radius 0.3s ease;
+}
+
+input[type="number"]:hover {
+    background-color: #d9d9d9;
+}
+
+input[type="number"]:focus {
+    border-radius: 0.7rem;
+}
+
+input[type="number"]:invalid {
+    background-color: #f18080;
+}
+
+#publication {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+#publication div{
+    padding-top: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+#publication div label {
+    display: inline;
+    font-family: sans-serif;
+}
+
+#year {
+    width: 9rem;
+}
+
+#month {
+    width: 6rem;
+}
+
+#day {
+    width: 6rem;
+}
+
+.filter-selector>div>label {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.clear,
+.filter {
+    padding: 0;
+
+    font-family: sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    width: 10rem;
+    height: 2rem;
+
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid #606060;
+    box-shadow: 1px 1px 1px 0 gray;
+
+    transition: background-color 0.3s ease;
+}
+
+.clear:hover,
+.filter:hover {
+    background-color: #c6c6c6;
+}
+
+.clear:hover,
+.filter:active {
+    box-shadow: -1px -1px 1px 0 gray;;
+}
+
+.books-wrapper {
+    padding: 1%;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.books-wrapper:after {
+    content: "";
+    flex: 1 1 100%;
+    max-width: 32%;
+}
+
+.show-page-state {
+    display: none;
+}
+
+.page-state {
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.page-state span {
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: clip;
+
+    display: inline-block;
+    overflow: hidden;
+    height: 30px;
+    width: 0;
+
+    transition: width 0.3s;
+}
+
+.show-page-state:checked+span{
+    transition: width 0.3s;
+    width: 100%;
+}
+
+.book-block {
+    position: relative;
+    cursor: pointer;
+
+    border-radius: 25px;
+    background-color: #e3e3e3;
+
+    margin: 2%;
+    width: 240px;
+    height: 240px;
+
+    transition: background-color 0.3s;
+}
+
+.book-block:hover {
+    background-color: #bbb;
+}
+
+.book-block .tooltip {
+    --scale: 0;
+    --tooltip-color: #DDD;
+    --text-color: black;
+    --available-color: #248f24;
+    --unavailable-color: #b30000;
+
+    position: absolute;
+    left: 50%;
+    top: -.5rem;
+    transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+
+    background-color: var(--tooltip-color);
+    padding: .5rem;
+    border-radius: .5rem;
+
+    width: max-content;
+    min-width: 50%;
+    max-width: 100%;
+
+    /*min-height: 40%;*/
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    transition: transform 300ms;
+    transform-origin: bottom center;
+
+    z-index: 20;
+}
+
+.book-block .tooltip::after{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: var(--tooltip-color);
+
+    transform-origin: top center;
+}
+
+.book-block:hover>.tooltip,
+.book-block:hover>.tooltip::after{
+    --scale: 1;
+}
+
+.book-block>.tooltip>span {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+.book-block>.tooltip>.book-state {
+    font-size: 24px;
+}
+
+.book-block>.tooltip>.available {
+    color: var(--available-color);
+    border-bottom: 2px solid var(--available-color);
+}
+
+.book-block>.tooltip>.unavailable {
+    color: var(--unavailable-color);
+    border-bottom: 2px solid var(--unavailable-color);
+}
+
+.book-block>span {
+    position: absolute;
+    width: 100%;
+
+    display: block;
+    text-align: center;
+}
+
+.book-block>.name {
+    top: 20px;
+    font-family: serif;
+    font-size: 25px;
+}
+
+.book-block>.by {
+    top: 60%;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.book-block>.author {
+    top: 70%;
+    font-family: serif;
+    font-size: 18px;
+}
+
+.book-block>.date {
+    bottom: 5px;
+}
+
+.dummy-book {
+    -webkit-animation-name: ShineAnimation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
+}
+
+@-webkit-keyframes ShineAnimation {
+    from {
+        background-repeat: repeat;
+        background-image:-webkit-linear-gradient(
+                top left,
+                rgba(255, 255, 255, 0.0) 0%,
+                rgba(255, 255, 255, 0.0) 40%,
+                rgba(255, 255, 255, 0.5) 48%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(255, 255, 255, 0.5) 52%,
+                rgba(255, 255, 255, 0.0) 57%,
+                rgba(255, 255, 255, 0.0) 100%
+        );
+        background-position:-250px -250px;
+        background-size: 600px 600px
+    }
+    to {
+        background-repeat: repeat;
+        background-position:250px 250px;
+    }
+}
