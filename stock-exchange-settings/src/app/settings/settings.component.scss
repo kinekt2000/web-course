@@ -1,0 +1,130 @@
+h2 {
+  text-align: center;
+}
+
+a {
+  padding: .5rem;
+  background-color: #fafafa;
+  text-decoration: none;
+  color: black;
+  border: 1px solid gray;
+
+  &:hover {
+    background-color: #e5e4e4;
+  }
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 960px){
+  .wrapper{
+    width: 100%;
+  }
+}
+
+.begin .end {
+  width: 15rem;
+  font-family: Roboto, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: bold;
+
+  margin: 1rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  display: block;
+  font-family: Roboto, serif;
+  font-size: 1.2rem;
+  text-align: center;
+
+  width: 100%;
+
+  border: 1px solid gray;
+  border-radius: .5rem;
+
+  &[type="date"] {
+    display: block;
+    width: 100%;
+
+    &:focus {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+input:focus {
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+}
+
+input[type=number] {
+
+  width: 1.8rem;
+  height: 1.8rem;
+
+  text-align: center;
+
+  &:first-of-type {
+    margin-right: .7rem;
+  }
+
+  /*remove arrows*/
+  /*mozilla*/
+  -moz-appearance: textfield;
+
+  /*chrome safari edge opera*/
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+}
+
+small {
+  text-align: center;
+  margin: .3rem;
+  font-size: .8rem;
+}
+
+button {
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: .5rem;
+
+  background-color: #fafafa;
+  border: 1px solid gray;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e5e4e4;
+  }
+}

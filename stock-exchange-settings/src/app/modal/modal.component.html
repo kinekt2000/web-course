@@ -1,0 +1,10 @@
+<div #modal class="modal">
+  <div class="modal-header">
+    <ng-content select=".modal-header"></ng-content>
+    <button class="close-button" (click)="close()">&times;</button>
+  </div>
+  <div class="modal-content">
+    <ng-content select=".modal-content"></ng-content>
+  </div>
+</div>
+<div #overlay class="overlay" (click)="close()"></div>

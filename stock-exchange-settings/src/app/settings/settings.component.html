@@ -1,0 +1,43 @@
+<h2>Settings</h2>
+
+<div class="wrapper">
+  <a routerLink="">На главную</a>
+  <form #form (submit)="submit($event)">
+    <div>
+      <label class="date"> Begin date
+        <input #HTMLbeginDate type="text" placeholder="Choose date" (blur)="HTMLbeginDate.type='text'" (focus)="HTMLbeginDate.type='date'" [value]="beginDate">
+      </label>
+
+      <label> Begin time
+        <div #HTMLbeginTime class="time">
+          <input type="number" class="hours" min="0" max="23" [value]="beginTime[0]">
+          <input type="number" class="minutes" min="0" max="59" [value]="beginTime[1]">
+        </div>
+      </label>
+    </div>
+
+    <div class="end">
+      <label> End date
+        <input #HTMLendDate type="text" placeholder="Choose date" (blur)="HTMLendDate.type='text'" (focus)="HTMLendDate.type='date'" [value]="endDate">
+      </label>
+
+      <label> End time
+        <div #HTMLendTime class="time">
+          <input type="number" class="hours" min="0" max="23" [value]="endTime[0]">
+          <input type="number" class="minutes" min="0" max="59" [value]="endTime[1]">
+        </div>
+      </label>
+    </div>
+
+    <div class="update">
+      <label> Update time
+        <div #HTMLupdate class="time">
+          <input type="number" class="hours" min="0" max="23" [value]="update[0]">
+          <input type="number" class="minutes" min="0" max="59" [value]="update[1]" >
+        </div>
+      </label>
+    </div>
+    <small></small>
+    <button type="submit"> Submit</button>
+  </form>
+</div>

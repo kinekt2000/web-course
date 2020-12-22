@@ -1,0 +1,70 @@
+<h2>Shares</h2>
+<div class="wrapper">
+  <a routerLink="">На главную</a>
+  <ul>
+    <li *ngFor="let share of shares" [attr.id]="share.company">
+      <div>
+        <app-input [data]="share.company" [width]="'13rem'" [type]="'lowercase'" [editing]="false"></app-input>
+        <app-input [data]="share.distribution" [width]="'15rem'" [type]="['linear', 'normal']" (changed)="changeDistribution($event, share.company)"></app-input>
+        <app-input [data]="share.count.toString()" [width]="'8rem'" [type]="'number'" (changed)="changeCount($event, share.company)"></app-input>
+        <app-input [data]="share.price.toString()" [width]="'8rem'" [type]="'number'" (changed)="changePrice($event, share.company)"></app-input>
+
+        <button class="btn remove" (click)="remove(share.company)"><fa-icon [icon]="faTimesCircle"></fa-icon></button>
+      </div>
+    </li>
+  </ul>
+  <button class="btn add" (click)="modal.open()"><fa-icon [icon]="faPlusSquare"></fa-icon></button>
+</div>
+
+<app-modal #modal>
+  <div class="modal-header">
+    <span>Add share</span>
+  </div>
+
+  <div class="modal-content">
+    <form #form (submit)="validateForm($event)">
+      <div class="company">
+        <label for="company" class="inp">
+          <input type="text" id="company" placeholder="&nbsp;" required>
+          <span class="label">COMPANY</span>
+          <span class="focus-bg"></span>
+        </label>
+        <small></small>
+      </div>
+
+      <div class="distribution">
+        <div class="select-box">
+          <div class="options-container">
+            <div *ngFor="let opt of distributionOptions" class="option" (click)="select(selected, opt)">
+              <input type="radio" class="radio" [attr.id]="opt" name="type">
+              <label [attr.for]="opt">{{opt}}</label>
+            </div>
+          </div>
+          <div #selected class="selected" (click)="handleList()">select distribution</div>
+        </div>
+        <small></small>
+      </div>
+
+      <div class="count">
+        <label for="count" class="inp">
+          <input type="text" id="count" placeholder="&nbsp;" required>
+          <span class="label">COUNT</span>
+          <span class="focus-bg"></span>
+        </label>
+        <small></small>
+      </div>
+
+      <div class="price">
+        <label for="price" class="inp">
+          <input type="text" id="price" placeholder="&nbsp;" required>
+          <span class="label">PRICE</span>
+          <span class="focus-bg"></span>
+        </label>
+        <small></small>
+      </div>
+
+      <button type="submit" class="submit">SUBMIT</button>
+    </form>
+  </div>
+
+</app-modal>

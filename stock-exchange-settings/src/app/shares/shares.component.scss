@@ -1,0 +1,268 @@
+h2 {
+  text-align: center;
+}
+
+a {
+  padding: .5rem;
+  background-color: #fafafa;
+  text-decoration: none;
+  color: black;
+  border: 1px solid gray;
+
+  &:hover {
+    background-color: #e5e4e4;
+  }
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 960px){
+  .wrapper{
+    width: 100%;
+  }
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  li {
+    background-color: #fafafa;
+    border-bottom: 1px solid gray;
+
+    >div {
+      display: flex;
+      align-content: center;
+    }
+
+    &:first-of-type {
+      border-top: 1px solid gray;
+    }
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  margin: .5rem;
+
+  cursor: pointer;
+
+  transition: color 0.3s;
+  &:hover {
+    color: gray;
+  }
+}
+
+.remove {
+  font-size: 1.5rem;
+}
+
+.add {
+  font-size: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  >div {
+    margin: 1rem;
+    width: 20rem;
+  }
+}
+
+.submit {
+  height: 2rem;
+  background: #fafafa;
+  border: 1px solid black;
+  cursor: pointer;
+
+  &:hover {
+    background: #e5e4e4;
+  }
+}
+
+.inp {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+
+  .label {
+    position: absolute;
+    bottom: .5rem;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, .5);
+    font-weight: 500;
+    transform-origin: 0 0;
+    transform: translate3d(0, 0, 0);
+    transition: all .2s ease;
+    pointer-events: none;
+  }
+
+  .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .05);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    border: none;
+    font-family: inherit;
+
+    padding: 12px 12px 0 12px;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    background: rgba(0, 0, 0, .2);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .3);
+    color: #000;
+    transition: all .15s ease;
+
+    &:hover{
+      background: rgba(0, 0, 0, .04);
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .5);
+    }
+
+    &:not(:placeholder-shown) {
+      + .label {
+        color: rgba(0, 0, 0, .5);
+        transform: translate3d(0, -1.2rem, 0) scale(.75);
+      }
+    }
+
+    &:focus {
+      background: rgba(0, 0, 0, .05);
+      outline: none;
+      box-shadow: inset 0 -2px 0 #5d5d5d;
+
+      + .label {
+        color: #5d5d5d;
+        transform: translate3d(0, -1.2rem, 0) scale(.75);
+
+        + .focus-bg {
+          transform: scale(1);
+          transition: all .1s ease;
+        }
+      }
+    }
+  }
+}
+
+.option, .selected {
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.selected::after {
+  content: "";
+  background: url("~src/assets/arrow-down.svg") no-repeat;
+  background-size: contain;
+  filter: invert(.7);
+
+  position: absolute;
+  height: 48px;
+  width: 48px;
+
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: all 0.4s;
+}
+
+.selected {
+  background-color: #cccccc;
+  border-radius: 3px;
+  color: #666;
+  position: relative;
+  box-shadow: inset 0 -1px 0 #5d5d5d;
+
+  padding: 1rem 12px 12px 12px;
+
+  order: 0;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.select-box {
+  display: flex;
+  flex-direction: column;
+
+  .options-container {
+    background-color: #ccc;
+    color: #666;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    border-radius: 3px;
+    overflow: hidden;
+
+    order: 1;
+
+    &.active {
+      max-height: 200px;
+      opacity: 1;
+      overflow: auto;
+
+      +.selected{
+        margin-bottom: 9px;
+        &::after {
+          transform: translateY(-50%) rotateX(180deg);
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+       width: 8px;
+       background-color: #0d141f;
+       border-radius: 0 3px 3px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #525261;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .option:hover {
+      background-color: #f5f5f5;
+    }
+
+    .option .radio {
+      display: none;
+    }
+  }
+
+  .label {
+    cursor: pointer;
+  }
+}

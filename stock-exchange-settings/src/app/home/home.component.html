@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <div class="data-block">
+    <div class="title">Brokers</div>
+    <div *ngIf="brokers; else loading">
+      <ul>
+        <li *ngFor="let broker of brokers">
+          <span>{{broker.username}}</span>
+        </li>
+      </ul>
+
+      <a routerLink="/brokers">Open</a>
+    </div>
+  </div>
+
+  <div class="data-block">
+    <div class="title">Shares</div>
+    <div *ngIf="shares; else loading">
+      <ul>
+        <li *ngFor="let share of shares">
+          <span>{{share.company}}</span>
+        </li>
+      </ul>
+
+      <a routerLink="/shares">Open</a>
+    </div>
+  </div>
+
+  <div class="data-block">
+    <div class="title">Settings</div>
+    <div *ngIf="settings; else loading">
+      <div class="begin">
+        <div>Begins:</div>
+        <span>
+          <span>{{settings.beginDate}}</span>
+          <span>{{settings.beginTime}}</span>
+        </span>
+      </div>
+      <div class="end">
+        <div>Ends:</div>
+        <span>
+          <span>{{settings.endDate}}</span>
+          <span>{{settings.endTime}}</span>
+        </span>
+      </div>
+
+      <a routerLink="/settings">Open</a>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading">
+    <div class="dot-pulse"></div>
+  </div>
+</ng-template>

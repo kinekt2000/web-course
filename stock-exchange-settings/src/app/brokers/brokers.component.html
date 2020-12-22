@@ -1,0 +1,56 @@
+<h2>Brokers</h2>
+<div class="wrapper">
+  <a routerLink="">На главную</a>
+  <ul>
+    <li *ngFor="let broker of brokers" [attr.id]="broker.username">
+      <div>
+        <app-input [data]="broker.username" [width]="'13rem'" [type]="'lowercase'" (changed)="changeUsername($event, broker.username)"></app-input>
+        <app-input [data]="broker.name" [width]="'15rem'" [type]="'string'" (changed)="changeName($event, broker.username)"></app-input>
+        <app-input [data]="broker.fund.toString()" [width]="'8rem'" [type]="'number'" (changed)="changeFund($event, broker.username)"></app-input>
+
+        <button class="btn remove" (click)="remove(broker.username)"><fa-icon [icon]="faTimesCircle"></fa-icon></button>
+      </div>
+    </li>
+  </ul>
+  <button class="btn add" (click)="modal.open()"><fa-icon [icon]="faPlusSquare"></fa-icon></button>
+</div>
+
+<app-modal #modal>
+  <div class="modal-header">
+    <span>Add broker</span>
+  </div>
+
+  <div class="modal-content">
+    <form #form (submit)="validateForm($event)">
+      <div class="username">
+        <label for="username" class="inp">
+          <input type="text" id="username" placeholder="&nbsp;" required>
+          <span class="label">USERNAME</span>
+          <span class="focus-bg"></span>
+        </label>
+        <small></small>
+      </div>
+
+      <div class="name">
+        <label for="name" class="inp">
+          <input type="text" id="name" placeholder="&nbsp;" required>
+          <span class="label">NAME</span>
+          <span class="focus-bg"></span>
+        </label>
+        <small></small>
+      </div>
+
+      <div class="fund">
+        <label for="fund" class="inp">
+          <input type="text" id="fund" placeholder="&nbsp;" required>
+          <span class="label">FUND</span>
+          <span class="focus-bg"></span>
+        </label>
+        <small></small>
+      </div>
+
+      <button type="submit" class="submit">SUBMIT</button>
+    </form>
+  </div>
+
+</app-modal>

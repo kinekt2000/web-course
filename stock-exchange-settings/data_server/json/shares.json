@@ -1,0 +1,32 @@
+[
+ {
+  "company": "astralica",
+  "distribution": "normal",
+  "count": 1245,
+  "price": 7689
+ },
+ {
+  "company": "softalley",
+  "distribution": "linear",
+  "count": 1000,
+  "price": 20
+ },
+ {
+  "company": "Gremlins Inc.",
+  "distribution": "linear",
+  "count": 263746,
+  "price": 10
+ },
+ {
+  "company": "sadas",
+  "distribution": "normal",
+  "count": "2312",
+  "price": "312123"
+ },
+ {
+  "company": "company",
+  "distribution": "normal",
+  "count": "15",
+  "price": "32423"
+ }
+]

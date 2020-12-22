@@ -1,0 +1,14 @@
+<div class="input-wrapper1">
+  <div class="input-wrapper2" [ngStyle]="{width: width}">
+    <span class="input-content" #content (focusout)="change()" (keypress)="checkInput($event)">{{data}}</span>
+    <button *ngIf="editing" class ="input-edit" (click)="edit()"><fa-icon [icon]="faPen"></fa-icon></button>
+  </div>
+  <div *ngIf="showList" #list class="list">
+    <div>
+      <button class="list-item" *ngFor="let item of type" [attr.data-type]="item" (click)="change(item)">{{item}}</button>
+    </div>
+  </div>
+  <div *ngIf="showList" #overlay class="overlay" (click)="closeList()"></div>
+  <div #message class="input-message">
+  </div>
+</div>
