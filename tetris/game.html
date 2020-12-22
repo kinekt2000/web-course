@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+
+    <link rel="stylesheet" href="game_style.css">
+    <script src="game_script.js"></script>
+</head>
+<body onload="onLoad()">
+
+<div class="pop">
+    <div class="canvas-wrapper" id="canvas-wrapper">
+        <div class="label">
+            <span>
+                Press ESC to pause
+            </span>
+        </div>
+        <div class="label">
+            <span>
+                Or change sounds and music volume
+            </span>
+        </div>
+
+    </div>
+
+    <input class="pause" id="pause" type="checkbox">
+    <div class="modal">
+        <div class="modal_inner pause-popup">
+            <div class="pause-wrapper">
+                <span>
+                    Pause
+                </span>
+            </div>
+
+            <div class="settings">
+                <p class="float">
+                    <label for="sounds">
+                        <i class="icon icon-sounds"></i>
+                        Sounds volume
+                    </label>
+                    <input type="range" id="sounds" min="0" max="1" step="0.05" value="0" onchange="changeSounds()">
+                </p>
+
+                <p class="float">
+                    <label for="music">
+                        <i class="icon icon-music"></i>
+                        Music volume
+                    </label>
+                    <input type="range" id="music" min="0" max="1" step="0.05" value="0" onchange="changeMusic()">
+                </p>
+            </div>
+
+            <div class="buttons">
+
+                <p class="exit-wrapper">
+                    <button type="button" class="exit-button" onclick="exitGame()">
+                        <span>
+                            Exit
+                        </span>
+                    </button>
+                    <i class="icon icon-exit"></i>
+                </p>
+
+
+
+                <p class="continue-wrapper">
+                    <button type="button" class="continue-button" onclick="continueGame()">
+                        <span>
+                            Continue
+                        </span>
+                    </button>
+                    <i class="icon icon-continue"></i>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <input class="game-over" id="game-over" type="checkbox">
+    <div class="modal">
+        <div class="modal_inner game-over-popup">
+            <div class="game-over-wrapper">
+                <span>
+                    Game Over!
+                </span>
+            </div>
+
+            <div class="player-wrapper">
+                <span id="nickname">
+                    undefined
+                </span>
+            </div>
+
+            <div class="player-wrapper">
+                <span class="score-label">
+                    You earned
+                </span>
+                <span class="score-label" id="score">
+                    0
+                </span>
+                <span class="score-label">
+                    score
+                </span>
+            </div>
+
+            <p class="exit-wrapper">
+                <button type="button" class="exit-button" onclick="exitGame()">
+                    <span>
+                        Exit
+                    </span>
+                </button>
+                <i class="icon icon-exit"></i>
+            </p>
+
+            <p class="scoreboard-wrapper">
+                <button type="button" class="scoreboard-button" onclick="goToScoreboard()">
+                    <span>
+                        Scoreboard
+                    </span>
+                </button>
+                <i class="icon icon-scoreboard"></i>
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

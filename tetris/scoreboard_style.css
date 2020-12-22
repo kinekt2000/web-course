@@ -1,0 +1,124 @@
+body {
+    background: #ffd480;
+}
+
+.scoreboard {
+    margin: 100px auto 30px;
+    padding: 10px;
+    width: 550px;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 15px;
+}
+
+li span {
+    background-color: #f9f9f9;
+    transition: background-color 0.5s;
+}
+
+li:hover span {
+    background-color: #e6e6e6;
+}
+
+.line-part {
+    padding: 5px 15px;
+
+    margin-left: 2px;
+    margin-right: 2px;
+
+    display: inline-block;
+
+    box-shadow:
+            0 0 5px rgba(0, 0, 0, 0.1),
+            0 3px 2px rgba(0, 0, 0, 0.1),
+            0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.text-field {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.nick {
+
+    border-left: 8px solid #cccccc;
+    border-top: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+
+    border-radius: 15px 50px 30px 50px;
+
+    width: 250px;
+}
+
+.score {
+    border-right: 8px solid #cccccc;
+    border-top: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+
+    border-radius: 30px 50px 15px 50px;
+
+    width: 100px;
+}
+
+
+.back {
+    position: relative;
+    margin: 20px auto;
+    height: 30px;
+    width: 75px;
+}
+
+button {
+    /* text */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+
+    /* position */
+    width: inherit;
+    height: inherit;
+
+    /* style */
+    border: 1px solid;
+    text-align: right;
+    padding-right: 15px;
+    box-shadow:
+            0 0 5px rgba(0, 0, 0, 0.1),
+            0 3px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background: #f9f9f9;
+
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: #e6e6e6;
+}
+
+button:active {
+    background-color: #e6e6e6;
+    box-shadow:
+            inset 0 0 5px rgba(0, 0, 0, 0.1),
+            inset 0 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+.icon-exit {
+    position: absolute;
+    transform-origin: 0 0;
+
+    top: 6px;
+    left: 9px;
+
+    width: 18px;
+    height: 18px;
+    background-image: url(icons/exit-button.svg);
+}

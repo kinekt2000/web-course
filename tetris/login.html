@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+
+    <link rel="stylesheet" href="login_style.css">
+    <script src="login_script.js"></script>
+</head>
+<body onload="onLoad()">
+<div class="wrapper">
+    <div class="label-name">
+            <span>
+                Tetris
+            </span>
+    </div>
+
+    <form class="auth">
+        <p class="field">
+            <label>
+                <input type="text"
+                       id="login"
+                       placeholder="enter nickname"
+                       maxlength="20"
+                       minlength="4"
+                       required>
+            </label>
+        </p>
+
+        <p class="score-board">
+                <button type="button" name="scoreboard" onclick="showScoreBoard()">
+                    <span>
+                        Scoreboard
+                    </span>
+                </button>
+            <i class="icon-scoreboard"></i>
+        </p>
+
+        <p class="submit">
+            <button type="button" name="submit" onclick="submitAndGo()">
+                <span>
+                    Play
+                </span>
+            </button>
+            <i class="icon-submit"></i>
+        </p>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+
+@font-face {
+    font-family: TetrisFont;
+    src: url("fonts/tetris.ttf");
+}
+
+body {
+    background: #ffd480;
+}
+
+.wrapper {
+    position: relative;
+    margin-top: 13%;
+}
+
+
+.label-name {
+    position: absolute;
+    left: 50%;
+    top: -140%;
+
+    /* text */
+    font-family: TetrisFont, sans-serif;
+    font-size: 150px;
+    font-weight: 400;
+
+    /* style */
+    text-align: center;
+}
+
+.label-name span {
+    position: relative;
+    left: -50%;
+    padding: -10px;
+}
+
+.auth{
+    position: relative;
+    width: 340px;
+    height: 105px;
+
+    margin: 30px auto;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    background: #fffaf6;
+    border-radius: 16px;
+    box-shadow:
+            0 2px 2px rgba(0, 0, 0, 0.2),
+            0 1px 2px rgba(0, 0, 0, 0.2),
+            0 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.auth .field {
+    position: relative;
+    text-align: center;
+}
+
+.auth input[type="text"] {
+    /* text */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+
+    /* position */
+    padding: 10px 18px 10px 18px;
+    width: 75%;
+
+    /* style*/
+    border: 2px;
+    text-align: center;
+    box-shadow:
+        inset 0 0 5px rgba(0, 0, 0, 0.1),
+        inset 0 3px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background: #f9f9f9;
+
+    transition: border-radius 0.5s, width 0.5s;
+}
+
+.auth input[type="text"]:hover {
+    border-radius: 10px;
+}
+
+.auth input[type="text"]:focus {
+    border-radius: 10px;
+    width: 80%;
+}
+
+.auth input[type="text"]:valid {
+    background: #ccffcc;
+}
+
+.auth .submit {
+    /* position */
+    position: absolute;
+    margin: 0;
+    right: 10%;
+    bottom: 10%;
+
+    height: 30px;
+    width: 80px;
+}
+
+.auth .score-board {
+    position: absolute;
+    margin: 0;
+    left: 10%;
+    bottom: 10%;
+
+    height: 30px;
+    width: 125px;
+}
+
+button {
+    /* text */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+
+    /* position */
+    width: inherit;
+    height: inherit;
+
+    /* style */
+    border: 1px solid;
+    text-align: right;
+    padding-right: 15px;
+    box-shadow:
+            0 0 5px rgba(0, 0, 0, 0.1),
+            0 3px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background: #f9f9f9;
+
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: #e6e6e6;
+}
+
+button:active {
+    background-color: #e6e6e6;
+    box-shadow:
+            inset 0 0 5px rgba(0, 0, 0, 0.1),
+            inset 0 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+.icon-submit {
+    position: absolute;
+    transform-origin: 0 0;
+
+    top: 6px;
+    left: 12px;
+
+    width: 18px;
+    height: 18px;
+    background-image: url(icons/play-button.svg);
+}
+
+
+.icon-scoreboard {
+    position: absolute;
+    transform-origin: 0 0;
+
+    top: 6px;
+    left: 9px;
+
+    width: 18px;
+    height: 18px;
+    background-image: url(icons/list-button.svg);
+}
+
+
+
+
+
+
